@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nomor 3 iqbal</title>
+    <style>
+        table{
+   border-spacing:0;
+            border-collapse: collapse;
+            width:100%;
+}
+th,td{
+   border:solid 1px black;
+   padding:20px;
+}
+.atas{
+   font-size: 50px;
+   text-align: center;
+}
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <table>
+            <tr>
+            <td class="atas">Menghitung Indeks Prestasi</td>
+            </tr>
+            </table>
+        </thead>
+        <tbody>
+            <table>
+            <tr>
+                <td width="6%" colspan="3">
+                    <label>Quis(10%) :</label> <br>
+                    <input type="text" id="input_kuis">
+                </td>
+                <td width="6%" colspan="3">
+                    <label>Tugas(20%) :</label> <br>
+                    <input type="text" id="input_tugas">
+                </td>
+                <td width="6%" colspan="3">
+                    <label>UTS(30%) :</label> <br>
+                    <input type="text" id="input_uts">
+                </td>
+                <td width="6%" colspan="3">
+                    <label>UAS(40%) :</label> <br>
+                    <input type="text" id="input_uas">
+                </td>
+            </tr>
+        </table>
+        </tbody>
+        <tbody>
+            <table>
+        <tr>
+            <td align="center">
+                <button type="button" onclick="hitung()">Hitung</button>
+                <button type="button" onclick="ulang()">Ulang</button>
+            </td>
+        </tr>
+        <table>
+    </tbody>
+    <tbody>
+        <table>
+    <tr>
+       <td align="center">
+        <label>indeks Prestasi :</label>
+        <input type="text" id="input_ip">
+        <label>keterangan :</label> 
+        <input type="text" id="input_keterangan">
+       </td>
+    </tr>
+    <table>
+    </tbody>
+    </table>
+    <script>
+        function hitung(){
+        var kuis = document.getElementById("input_kuis").value;
+        var tugas = document.getElementById("input_tugas").value;
+        var uts = document.getElementById("input_uts").value;
+        var uas = document.getElementById("input_uas").value;
+        
+        var hitung_kuis =0.1 * kuis;
+        var hitung_tugas =0.2 * tugas;
+        var hitung_uts =0.3 * uts;
+        var hitung_uas =0.4 * uas;
+        
+        var total_ip = hitung_kuis +hitung_tugas +hitung_uts +hitung_uas;
+        document.getElementById("input_ip").value = total_ip; 
+        if (total_ip> 80) {
+                var keterangan = "Lulus dengan Sangat Baik";
+                var ip = "A"
+            } else if (total_ip >= 69 && total_ip <= 80) {
+                var keterangan = "Lulus dengan baik";
+                var ip = "B"
+            }else if (total_ip >= 59 && total_ip <= 68) {
+                var keterangan = "Lulus dengan Cukup";
+                var ip = "C"
+            }else if (total_ip >= 39 && total_ip <= 55) {
+                var keterangan = "Lulus dengan Kurang";
+                var ip = "D"
+            }else  if(total_ip <= 38){
+                var keterangan = "Tidak Lulus";
+                var ip = "E"
+            }
+            document.getElementById("input_ip").value = ip; 
+            document.getElementById("input_keterangan").value = keterangan; 
+        }
+        function ulang(){
+        document.getElementById("input_kuis").value ="";
+        document.getElementById("input_tugas").value ="";
+        document.getElementById("input_uts").value ="";
+        document.getElementById("input_uas").value ="";
+        document.getElementById("input_ip").value ="";
+        document.getElementById("input_keterangan").value ="";
+    }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!-- Muhammad Zhahnur Arif (1204210075) - Tugas Praktikum 7 -->
+
+<html>
+<head>
+    <title>Objek Text Area</title>
+</head>
+<body>
+    <script>
+        function tekan() {
+            var ketstr = (document.ffrom.Ket.value);
+            document.ffrom.Oket.value = ketstr;
+        }
+    </script>
+    <form name="ffrom">
+        <h1> Memasukkan Data Dengan Objek TextArea</h1>
+        <hr>
+        <h3> Keterangan : </h3> <br>
+        <textarea name="Ket" rows="3" cols="30"></textarea>
+        <br> <br>
+        <input type="button" value="kirim" onclick="tekan()">
+        <input type="reset" value="ulang">
+        <h3> Output Keterangan : </h3>
+        <textarea name="Oket" rows="3" cols="30"> </textarea>
+    </form>
+</body>
+</html>

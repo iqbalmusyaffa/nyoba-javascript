@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nomor 2 iqbal</title>
+    <link rel="stylesheet" href="nomor2.css">
+</head>
+<body>
+    <table>
+        <thead>
+            <table>
+            <tr>
+            <td class="atas">Travel Bintang Abadi</td>
+            </tr>
+            </table>
+        </thead>
+        <tbody>
+            <table>
+            <tr>
+                <td width="50%" colspan="3">
+                    <label>Nama :</label>
+                    <input type="text" id="input_nama">
+                    <br>
+                    <br>
+                    <label>Tujuan :</label>
+                    <select name="" id="dropdown_tujuan">
+                        <option value="">pilih tujuan</option>
+                        <option value="">jakarta</option>
+                        <option value="">cirebon</option>
+                        <option value="">tasikmalaya</option>
+                    </select>
+                    <br>
+                    <br>
+                    <label> Jumlah :</label>
+                    <input type="text" id="input_jumlahtiket">
+                    <br>
+                    <br>
+                    <label>Member :</label>
+                    <input type="checkbox" id="cek_member"> Ya
+                </td>
+                <td width="60%" colspan="3">
+                    <label>Harga Tiket :</label>
+                    <input type="text" id="input_hargatiket">
+                    <br>
+                    <br>
+                    <label>Sub Total :</label>
+                    <input type="text" id="input_subtotal">
+                    <br>
+                    <br>
+                    <label> Diskon :</label>
+                    <input type="text" id="input_diskon">
+                    <br>
+                    <br>
+                    <label>Total Bayar :</label>
+                    <input type="text" id="input_bayar"> 
+                </td>
+            </tr>
+        </table>
+        </tbody>
+        <tbody>
+            <table>
+        <tr>
+            <td align="center">
+                <button type="button" onclick="hitung()">Hitung</button>
+                <button type="button" onclick="ulang()">Ulang</button>
+            </td>
+        </tr>
+        <table>
+    </tbody>
+    </table>
+    <script>
+        function hitung(){
+            // harga tiket
+            var option = document.getElementById("dropdown_tujuan");
+            var tujuan = option.options[option.selectedIndex].text;
+
+            if (tujuan =="jakarta") {
+                var harga_tiket = 100000;
+            } else if (tujuan =="cirebon") {
+                var harga_tiket = 150000;
+            }else if (tujuan =="tasikmalaya") {
+                var harga_tiket = 200000;
+            }else {
+                alert("pilihlah dengan benar")
+            }
+            document.getElementById("input_hargatiket").value = harga_tiket; 
+            // subtotal
+            var jumlah_tiket = document.getElementById("input_jumlahtiket").value;
+            var subtotal =harga_tiket*jumlah_tiket;
+            document.getElementById("input_subtotal").value = subtotal; 
+            //member
+            var checkbox =document.getElementById("cek_member").checked;
+            if (checkbox == true){
+                var diskon = 0.10 * subtotal;
+            } else if (checkbox == false) {
+                var diskon = 0;
+            }
+            document.getElementById("input_diskon").value = diskon;
+            //bayar
+            var total = subtotal -diskon;
+            document.getElementById("input_bayar").value = total;
+        }
+        function ulang(){
+        document.getElementById("input_nama").value ="";
+        document.getElementById("dropdown_tujuan").value ="";
+        document.getElementById("input_jumlahtiket").value ="";
+        document.getElementById("input_hargatiket").value ="";
+        document.getElementById("input_subtotal").value ="";
+        document.getElementById("input_diskon").value ="";
+        document.getElementById("input_bayar").value ="";
+        var hapuscheckbox =document.getElementById("cek_member");
+        hapuscheckbox.checked =false;
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Select</title>
+</head>
+<body>
+
+    <script language="JavaScript">
+        function tekan() 
+        {
+            var jurusanstr = (document, fform.Jurusan.value);
+            document.fform.Ojurusan.value = jurusanstr;
+        }
+    </script>
+
+    <form name="fform">
+        <h1>Penggunaan Object Select</h1>
+        <hr>
+        <h3>Masukkan :</h3>
+        Jurusan di Institut Teknologi Telkom Surabaya :
+        <select name="Jurusan" Size="1">
+            <option value="Sistem Informasi">Sistem Informasi</option>
+            <option value="Teknologi Informatika">Teknologi Informatika</option>
+            <option value="Informatika">Informatika</option>
+            <option value="Sains Data">Sains Data</option>
+            <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
+            <option value="Bisnis Digital">Bisnis Digital</option>
+        </select>
+        <p><input type="button" value="Kirim" onclick="tekan()"></p>
+        <input type="reset" value="Ulang">
+        <h3>Output jurusan :</h3>
+        <input type="text" name="Ojurusan" size="30">
+    </form>
+
+</body>
+</html>

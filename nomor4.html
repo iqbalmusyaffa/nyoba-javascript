@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nomor 4 iqbal</title>
+</head>
+<body>
+    <h1 align="center">Latihan Perulangan</h1>
+    <p>Data input</p><br>
+    <label>Saldo :</label>
+    <input type="text" id="input_saldo">
+    <br>
+    <label>Bunga :</label> 
+    <input type="text" id="input_bunga"> %
+    <br>
+    <label>Waktu :</label>
+    <input type="text" id="input_waktu">
+    <hr>
+    <button onclick="hitung()">Hitung</button>
+    <button onclick="reset()">Reset</button>
+    <p>Hasil Perhitungan</p>
+    <textarea name="" id="hasil_text" cols="100" rows="30" disabled></textarea>
+    <script>
+        function hitung(){
+            var saldo =  Number(document.getElementById("input_saldo").value); 
+            var bunga =  Number(document.getElementById("input_bunga").value); 
+            var waktu =  Number(document.getElementById("input_waktu").value); 
+
+            var hasil =""
+
+            for (var index = 1 ; index <=waktu; index++){
+               saldo= saldo +(saldo*bunga);
+               hasil += `Saldo Bulan ${index} = Rp. ${saldo} \n` ;
+            }
+            document.getElementById("hasil_text").value =hasil; 
+
+        }
+        function reset(){
+        document.getElementById("input_saldo").value ="";
+        document.getElementById("input_bunga").value ="";
+        document.getElementById("input_waktu").value ="";
+        document.getElementById("hasil_text").value ="";
+    }
+
+    </script>
+</body>
+</html>
